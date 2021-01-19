@@ -1,15 +1,13 @@
 package com.gildedrose
 
-import com.gildedrose.operations.AgedBrieOperation
-import com.gildedrose.operations.BackStageOperation
-import com.gildedrose.operations.ItemOperation
-import com.gildedrose.operations.SulfurasOperation
+import com.gildedrose.operations.*
 
 class GildedRose(var items: Array<Item>) {
     private val operationMap = mapOf(
         ItemConstants.AGED_BRI to AgedBrieOperation(),
         ItemConstants.BACKSTAGE to BackStageOperation(),
-        ItemConstants.SULFURAS to SulfurasOperation()
+        ItemConstants.SULFURAS to SulfurasOperation(),
+        ItemConstants.CONJURED to ConjuredOperation()
     )
 
     private val defaultOperation = ItemOperation()

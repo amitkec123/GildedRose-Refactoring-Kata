@@ -90,6 +90,20 @@ class GildedRoseTest {
         thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", -1, 0)
     }
 
+    @Test
+    fun `Conjured degrades in quality twice as normal`() {
+        givenItemDetails(ItemConstants.CONJURED, 20, 20)
+        whenUpdateQuality()
+        thenIsSameAsItem(ItemConstants.CONJURED, 19, 18)
+    }
+
+    @Test
+    fun `Conjured degrades in quality and is never negative`() {
+        givenItemDetails(ItemConstants.CONJURED, 20, 1)
+        whenUpdateQuality()
+        thenIsSameAsItem(ItemConstants.CONJURED, 19, 0)
+    }
+
     private fun givenItemDetails(name: String, sellIn: Int, quality: Int) {
         gildedRose = GildedRose(arrayOf(Item(name = name, sellIn = sellIn, quality = quality)))
     }
