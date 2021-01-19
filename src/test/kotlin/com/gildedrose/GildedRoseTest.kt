@@ -8,9 +8,9 @@ class GildedRoseTest {
 
     @Test
     fun `Quality and sellIn are decreased every day`() {
-        givenItemDetails("foo", 20, 20)
+        givenItemDetails("foo", 20, 15)
         whenUpdateQuality()
-        thenIsSameAsItem("foo", 19, 19)
+        thenIsSameAsItem("foo", 19, 14)
     }
 
     @Test
