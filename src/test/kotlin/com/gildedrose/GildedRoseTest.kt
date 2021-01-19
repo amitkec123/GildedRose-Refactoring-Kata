@@ -29,65 +29,65 @@ class GildedRoseTest {
 
     @Test
     fun `Aged Brie increases the quality the older it gets`() {
-        givenItemDetails("Aged Brie", 20, 20)
+        givenItemDetails(ItemConstants.AGED_BRI, 20, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Aged Brie", 19, 21)
+        thenIsSameAsItem(ItemConstants.AGED_BRI, 19, 21)
     }
 
     @Test
     fun `Quality is never more than 50`() {
-        givenItemDetails("Aged Brie", 20, 50)
+        givenItemDetails(ItemConstants.AGED_BRI, 20, 50)
         whenUpdateQuality()
-        thenIsSameAsItem("Aged Brie", 19, 50)
+        thenIsSameAsItem(ItemConstants.AGED_BRI, 19, 50)
     }
 
     @Test
     fun `Quality is never more than 50 with BackStage`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 3, 49)
+        givenItemDetails(ItemConstants.BACKSTAGE, 3, 49)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 2, 50)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, 2, 50)
     }
 
     @Test
     fun `Sulfuras never has to be sold or decreases in Quality`() {
-        givenItemDetails("Sulfuras, Hand of Ragnaros", 20, 50)
+        givenItemDetails(ItemConstants.SULFURAS, 20, 50)
         whenUpdateQuality()
-        thenIsSameAsItem("Sulfuras, Hand of Ragnaros", 20, 50)
+        thenIsSameAsItem(ItemConstants.SULFURAS, 20, 50)
     }
 
     @Test
     fun `Backstage passes increases in Quality by 2 as its SellIn value is 10 days`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 10, 20)
+        givenItemDetails(ItemConstants.BACKSTAGE, 10, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 9, 22)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, 9, 22)
     }
 
     @Test
     fun `Backstage passes increases in Quality by 2 as its SellIn value is 6 days`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 6, 20)
+        givenItemDetails(ItemConstants.BACKSTAGE, 6, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 5, 22)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, 5, 22)
     }
 
     @Test
     fun `Backstage passes increases in Quality by 3 as its SellIn value is 5 days`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 5, 20)
+        givenItemDetails(ItemConstants.BACKSTAGE, 5, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 4, 23)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, 4, 23)
     }
 
     @Test
     fun `Backstage passes increases in Quality by 3 as its SellIn value is 1 day`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 1, 20)
+        givenItemDetails(ItemConstants.BACKSTAGE, 1, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 0, 23)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, 0, 23)
     }
 
     @Test
     fun `Backstage passes drops to zero after the concert`() {
-        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 0, 20)
+        givenItemDetails(ItemConstants.BACKSTAGE, 0, 20)
         whenUpdateQuality()
-        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", -1, 0)
+        thenIsSameAsItem(ItemConstants.BACKSTAGE, -1, 0)
     }
 
     @Test
