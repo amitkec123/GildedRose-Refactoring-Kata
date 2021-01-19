@@ -1,11 +1,15 @@
 package com.gildedrose
 
 fun Item.decrementQuality() {
-    quality -= 1
+    if (quality > ItemConstants.MIN_QUALITY) {
+        quality -= 1
+    }
 }
 
 fun Item.incrementQuality() {
-    quality += 1
+    if (quality < ItemConstants.MAX_QUALITY) {
+        quality += 1
+    }
 }
 
 fun Item.decrementSellIn() {

@@ -42,6 +42,13 @@ class GildedRoseTest {
     }
 
     @Test
+    fun `Quality is never more than 50 with BackStage`() {
+        givenItemDetails("Backstage passes to a TAFKAL80ETC concert", 3, 49)
+        whenUpdateQuality()
+        thenIsSameAsItem("Backstage passes to a TAFKAL80ETC concert", 2, 50)
+    }
+
+    @Test
     fun `Sulfuras never has to be sold or decreases in Quality`() {
         givenItemDetails("Sulfuras, Hand of Ragnaros", 20, 50)
         whenUpdateQuality()
