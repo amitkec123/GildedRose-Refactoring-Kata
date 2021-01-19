@@ -35,19 +35,15 @@ class GildedRose(var items: Array<Item>) {
             }
 
             if (item.sellIn < 0) {
-                if (item.name != ItemConstants.AGED_BRI) {
-                    if (item.name != ItemConstants.BACKSTAGE) {
-                        if (item.quality > ItemConstants.MIN_QUALITY) {
-                            if (item.name != ItemConstants.SULFURAS) {
-                                item.decrementQuality()
-                            }
-                        }
-                    } else {
-                        item.quality = ItemConstants.MIN_QUALITY
-                    }
-                } else {
+                if (item.name == ItemConstants.AGED_BRI) {
                     if (item.quality < ItemConstants.MAX_QUALITY) {
                         item.incrementQuality()
+                    }
+                } else if (item.name == ItemConstants.BACKSTAGE) {
+                    item.quality = ItemConstants.MIN_QUALITY
+                } else if (item.quality > ItemConstants.MIN_QUALITY) {
+                    if (item.name != ItemConstants.SULFURAS) {
+                        item.decrementQuality()
                     }
                 }
             }
