@@ -6,5 +6,5 @@ object ItemConstants {
     const val AGED_BRI = "Aged Brie"
     const val BACKSTAGE = "Backstage passes to a TAFKAL80ETC concert"
     const val SULFURAS = "Sulfuras, Hand of Ragnaros"
-    const val CONJURED = "Conjured"
+    const val CONJURED = "Conjured Mana Cake"
 }
